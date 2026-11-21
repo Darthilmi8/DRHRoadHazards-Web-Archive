@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Video View Count Comparison</title>
+
+    <style>
+        body {
+            background: #260038;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .graph-container {
+            width: 95%;
+            max-width: 1100px;
+            height: 500px;
+            position: relative;
+        }
+
+        table {
+            color: white;
+            border: 1px solid white;
+            border-collapse: separate;
+        }
+
+        th, td {
+            border: 1px solid white;
+            padding: 5px;
+        }
+
+        a {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2 id="comparisonTitle">Video View Count Comparison</h2>
+
+<p id="comparisonStatus">Loading video histories...</p>
+
+<div class="graph-container">
+    <canvas id="comparisonChart"></canvas>
+</div>
+
+<h3>Compared Videos</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Video</th>
+            <th>First recorded crawl (UTC)</th>
+            <th>Latest recorded crawl (UTC)</th>
+            <th>Highest recorded views</th>
+            <th>Measurements</th>
+        </tr>
+    </thead>
+
+    <tbody id="comparisonTable"></tbody>
+</table>
+
+
+<!-- Libraries -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/luxon@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1"></script>
+
+
+<!-- COMPARISON SETTINGS -->
+
+<script>
+
+const comparisonSettings = {
+
+    title: "DRHRoadHazards Video Comparison",
+
+    videos: [
+
+        {
+            name: "First Video",
+            file: "9XVFYMpWwn4.html"
+        },
+
+
+        {
+            name: "DRH Tribute",
+            file: "w6ID2eMcrXk.html"
+        }
+
+    ]
+
+};
+
+</script>
+
+
+<!-- Main comparison script -->
+
+<script src="comparison.js"></script>
+
+</body>
+</html>

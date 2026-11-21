@@ -1,0 +1,49 @@
+@property --gradient-color {
+    syntax: "<color>";
+    initial-value: #800080;
+    inherits: false;
+}
+
+body {
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+    background: linear-gradient(#000000, var(--gradient-color));
+    animation: bgColors 20s ease-in-out infinite;
+}
+
+@keyframes bgColors {
+    0% {
+        --gradient-color: #3F003F;
+    }
+    25% {
+        --gradient-color: #00003D;
+    }
+    50% {
+        --gradient-color: #004A00;
+    }
+    75% {
+        --gradient-color: #704500;
+    }
+    100% {
+        --gradient-color: #3F003F;
+    }
+}
+.flashing-title {
+  animation: flashColors 5s infinite;
+}
+
+@keyframes flashColors {
+  0%   { color: #800080; }
+  25%  { color: #0000FF; }
+  50% { color: #00FF00; }
+  75%  { color: #FFA500; }
+  100%   { color: #800080; }
+}
+.outlined {
+    border: 2px solid white;
+}
+table, th, td {
+ border:1px solid white;
+}
+ body {
+  color: white;
+}
