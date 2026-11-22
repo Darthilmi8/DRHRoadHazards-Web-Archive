@@ -19,7 +19,54 @@ table, th, td {
 <h2><i>Delinquent Road Hazards - Fight Back</i></h2>
 <h3>tfGhZ7dZYlQ</h3>
 <h3><a href="DRHRoadHazards_Web.html" style="color: white;">Back to index</a></h3>
-<img src="Delinquent Road Hazards - Fight Back-tfGhZ7dZYlQ.jpg" width="560" height="420" alt="Thumbnail" class="outlined">
+<div style="margin-bottom:8px;">
+  <button id="showVideo" type="button" aria-pressed="true" style="color:white; background:#333; border:1px solid white; padding:5px 12px; cursor:pointer;">Video</button>
+  <button id="showThumbnail" type="button" aria-pressed="false" style="color:white; background:black; border:1px solid white; padding:5px 12px; cursor:pointer;">Thumbnail</button>
+</div>
+<img id="videoThumbnail" src="Delinquent Road Hazards - Fight Back-tfGhZ7dZYlQ.jpg" width="560" height="420" alt="Thumbnail" class="outlined" style="display:none;">
+<br>
+  <video
+    id="archiveVideo"
+    width="640"
+    height="360"
+    controls
+    preload="metadata"
+    style="background:#000;"
+  >
+    <source
+      src="https://archive.org/download/drhroadhazards/Videos/Delinquent%20Road%20Hazards%20-%20Fight%20Back-tfGhZ7dZYlQ.mp4"
+      type="video/mp4">
+  </video>
+<script>
+  (function () {
+    var video = document.getElementById("archiveVideo");
+    var thumbnail = document.getElementById("videoThumbnail");
+    var videoButton = document.getElementById("showVideo");
+    var thumbnailButton = document.getElementById("showThumbnail");
+
+    function showVideo() {
+      video.style.display = "block";
+      thumbnail.style.display = "none";
+      videoButton.setAttribute("aria-pressed", "true");
+      thumbnailButton.setAttribute("aria-pressed", "false");
+      videoButton.style.background = "#333";
+      thumbnailButton.style.background = "black";
+    }
+
+    function showThumbnail() {
+      video.style.display = "none";
+      thumbnail.style.display = "inline";
+      thumbnailButton.setAttribute("aria-pressed", "true");
+      videoButton.setAttribute("aria-pressed", "false");
+      thumbnailButton.style.background = "#333";
+      videoButton.style.background = "black";
+      video.pause();
+    }
+
+    videoButton.addEventListener("click", showVideo);
+    thumbnailButton.addEventListener("click", showThumbnail);
+  })();
+</script>
 <p>Title: <i>Delinquent Road Hazards - Fight Back</i></p>
 <p>ID: tfGhZ7dZYlQ</p>
 <p>Upload date: Sat Jul 18 2009 20:28:50 GMT</p>
